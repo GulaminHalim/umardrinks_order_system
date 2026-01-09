@@ -8,6 +8,7 @@ import MenuCard from "./pages/MenuCard";
 import Payment from "./pages/Payment";
 import Information_System from "./pages/Information_System";
 import Cashier from "./pages/Cashier";
+import Thankyou from "./pages/Thankyou";
 
 function App() {
   return (
@@ -15,7 +16,10 @@ function App() {
       <Route path="/" element={<List_Menu />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
+
       {/*<Route path="/list_menu" element={<List_Menu />} />*/}
+
+      <Route path="/thankyou" element={<Thankyou />} />
 
       <Route path="/dashboard" element={<Dashboard />} />
 

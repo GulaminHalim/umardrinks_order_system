@@ -12,11 +12,13 @@ import Form from "react-bootstrap/Form";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
 import Swal from "sweetalert2";
+import Thankyou from "./Thankyou.jsx";
 
 export default function Payment() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [customerName, setCustomerName] = useState("");
+  const [orderSuccess, setOrderSuccess] = useState(false);
 
   function alertToOrderSent() {
     Swal.fire({
@@ -37,11 +39,11 @@ export default function Payment() {
         hasNewOrder: true,
         createdAt: serverTimestamp(),
       });
+
       alertToOrderSent();
       dispatch(clearCart());
       localStorage.removeItem("welcomeModalShown");
-
-      navigate("/");
+      setOrderSuccess(true);
 
       // alert("Order berhasil dikirim ke kasir, \nSilahkan tunggu konfirmasi dari kasir!");
     } catch (error) {
@@ -52,6 +54,10 @@ export default function Payment() {
 
   // Ambil data cart dari Redux
   const cartItems = useSelector((state) => state.cart.items);
+
+  if (orderSuccess) {
+    return <Navigate to="/thankyou" replace />;
+  }
 
   if (cartItems.length === 0) {
     return <Navigate to="/" />;
