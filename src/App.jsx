@@ -12,10 +12,10 @@ import Cashier from "./pages/Cashier";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={<List_Menu />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/list_menu" element={<List_Menu />} />
+      {/*<Route path="/list_menu" element={<List_Menu />} />*/}
 
       <Route path="/dashboard" element={<Dashboard />} />
 
