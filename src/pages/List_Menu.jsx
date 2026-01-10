@@ -29,7 +29,7 @@ export default function List_Menu() {
       const timer = setTimeout(() => {
         setShowWelcomeModal(true);
         localStorage.setItem("welcomeModalShown", "true");
-      }, 3000); // 3 detik
+      }, 1000); // 3 detik
 
       return () => clearTimeout(timer);
     }

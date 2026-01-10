@@ -7,6 +7,7 @@ const Receipt = forwardRef(({ order }, ref) => {
       style={{ width: "280px", padding: "10px", fontSize: "12px" }}
     >
       <h5 style={{ textAlign: "center" }}>UMAR DRINKS</h5>
+      <p style={{ textAlign: "center" }}>- Depan UNAS -</p>
       <p style={{ textAlign: "center" }}>
         Alpukat kocok, Durian kocok, and Dimsum
       </p>
